@@ -1,17 +1,26 @@
-# Chirper Project
+# Would You Rather
 
-This repo is a code-along with the second project in the [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
+---
 
-Most of the commits in this repository correspond to videos in the program.
+## Project Purpose:
 
-## Project Setup
+This is a Udacity React Nanodegree Project. This project is a Would You Rather app where a user can login, add question to the forum to view, answer questions asked and view leaderboard for the score. The purpose of this project is to demonstrate the react with redux fundamentals like using actions, middleware, reducers, thunk, logger, optimistic updates, ContextAPI and components along with Routing between components providing a consistency in state management and flow of the pages.
 
-* clone the Project
-* install the dependencies - `npm install`
-* start the development server - `npm start`
+## How to Load the App
 
-## Contributing
+The project uses Node.js and the Create-React-App starter. If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
-Because this is a code-along project and the commits correspond to specific videos in the program, we will not be accepting pull requests.
+Once Node is installed, navigate to the directory where you want to store the app
 
-If you feel like there's a major problem, please open an issue to discuss the problem and potential resolution.
+```
+git clone https://github.com/harishb93/would-you-rather.git
+npm install
+```
+
+Once all of the dependencies have been installed you can launch the app with
+
+```
+npm start
+```
+
+A new browser window should automatically open displaying the app. If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser
