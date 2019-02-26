@@ -129,6 +129,12 @@ li {
   flex: 1;
 }
 
+.row-data-1 {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
 .question-info {
   margin: 10px;
   display: flex;

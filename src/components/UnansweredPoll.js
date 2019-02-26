@@ -29,7 +29,7 @@ class UnansweredPoll extends Component {
           />
         </div>
       </div>
-      <div className='row-data'>
+      <div className='row-data-1'>
         <div className='question-data'>
           <div>
             <span className='center'>Would You Rather...</span>

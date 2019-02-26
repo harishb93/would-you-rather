@@ -27,7 +27,6 @@ class NewQuestion extends Component {
 
   handleSubmit = (e) => {
   e.preventDefault()
-  console.log("Inside handleSubmit")
   const {option1,option2} = this.state
   const {dispatch} = this.props
 
