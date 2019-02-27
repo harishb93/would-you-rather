@@ -13,19 +13,9 @@ class NewQuestion extends Component {
     questionNotSaved: false
   }
 
-  handleChangeOption1 = (e)=> {
-    const option1=e.target.value
-    this.setState(() => ({
-      option1
-    }))
-  }
-
-  handleChangeOption2 = (e)=> {
-    const option2=e.target.value
-    this.setState(() => ({
-      option2
-    }))
-  }
+  handleOptionChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+}
 
   handleSubmit = (e) => {
   e.preventDefault()
@@ -70,10 +60,10 @@ class NewQuestion extends Component {
           <form className='new-question' onSubmit={this.handleSubmit}>
             <h5>Would You Rather...</h5>
             <input className='center' placeholder="Enter Option 1"
-              onChange={this.handleChangeOption1} value={option1}></input>
+              onChange={this.handleOptionChange} name="option1" value={option1}></input>
             <span className='center'>OR</span>
             <input className='center' placeholder="Enter Option 2"
-              onChange={this.handleChangeOption2} value={option2}></input>
+              onChange={this.handleOptionChange} name="option2" value={option2}></input>
 
             <button className='btn btn-info' type='submit' disabled={option2 === '' || option1==='' }>Submit</button>
           </form>

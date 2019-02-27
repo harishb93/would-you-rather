@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {Link , withRouter} from 'react-router-dom'
 
-class UnansweredPoll extends Component {
-
-  render() {
-
-    const {question,user} = this.props
+const UnansweredPoll = (props) => {
+  
+    const {question,user} = props
     const {id,optionOne,optionTwo}=question
     const {avatarURL,name}=user
 
     if(question === null)
-    return <p></p>
+    return null
 
     return (
       <div className='question'>
@@ -45,7 +43,7 @@ class UnansweredPoll extends Component {
       </div>
       </div>
     )
-  }
+
 }
 
 function mapStateToProps({questions,users},{id}){
