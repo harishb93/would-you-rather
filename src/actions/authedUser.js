@@ -9,6 +9,7 @@ export function setAuthedUser(id){
   }
 }
 
+//logoutUser action creator
 export function logoutUser(){
   return {
     type: LOGOUT_USER

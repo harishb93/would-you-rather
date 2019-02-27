@@ -10,7 +10,6 @@ class LoginPage extends Component {
   state = {
     imgSrc: 'https://cdn5.vectorstock.com/i/thumb-large/21/19/unknown-person-flat-icon-vector-15222119.jpg',
     userToSignIn: null,
-    disabled: true,
     toHome: false
   }
 
@@ -19,12 +18,6 @@ class LoginPage extends Component {
     this.setState({
       imgSrc: selectedUser.avatarURL,
       userToSignIn: selectedUser.id
-    }, () => {
-      if (this.state.userToSignIn) {
-        this.setState({
-          disabled: false
-        })
-      }
     })
   }
 
@@ -49,7 +42,7 @@ class LoginPage extends Component {
         </FormControl>
       </FormGroup>
       <Button
-        disabled={this.state.disabled}
+        disabled= {this.state.userToSignIn ? false : true}
         type="submit" bsStyle="info">
         Sign In
       </Button>

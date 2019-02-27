@@ -1,6 +1,6 @@
 import {RECEIVE_QUESTIONS,ADD_QUESTION,ANSWER_QUESTION} from '../actions/questions'
 
-//Questions reducer - Handle receiving all questions and adding new question
+//Questions reducer - Handle receiving all questions, adding new question and answering a question
 export default function questions(state={},action){
   switch(action.type){
     case RECEIVE_QUESTIONS:

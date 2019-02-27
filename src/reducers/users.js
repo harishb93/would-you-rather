@@ -1,6 +1,6 @@
 import {RECEIVE_USERS,ADD_QUESTION_TO_USER,ADD_ANSWER_TO_USER} from '../actions/users'
 
-//Users reducer
+//Users reducer - Handle receiving all users, adding question and answers to an user
 export default function users(state={},action){
   switch(action.type){
     case RECEIVE_USERS:
