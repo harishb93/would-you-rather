@@ -4,7 +4,7 @@ import {addQuestionToUser,addAnswerToUser} from './users'
 export const RECEIVE_QUESTIONS='RECEIVE_QUESTIONS'
 export const ADD_QUESTION='ADD_QUESTION'
 export const ANSWER_QUESTION='ANSWER_QUESTION'
-//addQuestion action creator
+//addTweet action creator
 function addQuestion(question){
   return {
     type: ADD_QUESTION,
@@ -12,15 +12,6 @@ function addQuestion(question){
   }
 }
 
-//receiveQuestions action creator
-export function receiveQuestions(questions){
-  return{
-    type: RECEIVE_QUESTIONS,
-    questions
-  }
-}
-
-//answerQuestion action creator
 function answerQuestion(authedUser,qid,answer){
   return {
     type: ANSWER_QUESTION,
@@ -30,7 +21,6 @@ function answerQuestion(authedUser,qid,answer){
   }
 }
 
-//handleAnswerQuestion thunk action creator - Returns function instead of action for thunk to invoke the dispatch functions given here
 export function handleAnswerQuestion(qid,answer){
   return (dispatch,getState) => {
     const {authedUser} = getState()
@@ -50,7 +40,6 @@ export function handleAnswerQuestion(qid,answer){
   }
 }
 
-//handleAddQuestion thunk action creator - Returns function instead of action for thunk to invoke the dispatch functions given here
 export function handleAddQuestion(optionOneText, optionTwoText){
   return (dispatch, getState) => {
     const {authedUser} = getState()
@@ -68,5 +57,13 @@ export function handleAddQuestion(optionOneText, optionTwoText){
       console.warn('Error in handleAddQuestion: ',e)
       alert('There was an error adding the question. Try again.')
     })
+  }
+}
+
+//receiveTweets action creator
+export function receiveQuestions(questions){
+  return{
+    type: RECEIVE_QUESTIONS,
+    questions
   }
 }

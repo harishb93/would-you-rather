@@ -10,7 +10,6 @@ export function receiveUsers(users){
   }
 }
 
-//addQuestionToUser action creator
 export function addQuestionToUser(question){
   return {
     type: ADD_QUESTION_TO_USER,
@@ -18,7 +17,6 @@ export function addQuestionToUser(question){
   }
 }
 
-//addAnswerToUser action creator
 export function addAnswerToUser(authedUser,qid,answer){
   return {
     type: ADD_ANSWER_TO_USER,
