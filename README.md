@@ -25,14 +25,14 @@ npm start
 
 A new browser window should automatically open displaying the app. If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser
 
-![Login Screen](LoginPage.JPG "login screen")
+![Login Screen](LoginPage.PNG "login screen")
 
 ## How to Use the App
 
 - Selected user can view his/her answered and unanswered questions
 - User can ask a new question which is globally available to all users
-  ![Home Screen](HomePage.JPG "home")
+  ![Home Screen](HomePage.PNG "home")
 
 - User can view his/her position in the leaderboard
-  ![LeaderBoard Screen](LeaderBoard.JPG "leaderboard")
+  ![LeaderBoard Screen](LeaderBoard.PNG "leaderboard")
 _Note: The backend API can store data only limited to the session. On refresh, the newly added data is lost_
