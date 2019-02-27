@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import {handleAnswerQuestion} from '../actions/questions'
+import { SyncLoader } from 'react-spinners';
 
 class Question extends Component {
 
   state = {
     checkedValue:'',
-    toHome: false
+    toHome: false,
+    responseSaving: false
   }
 
   handleToggle = (e) => {
@@ -23,17 +25,23 @@ class Question extends Component {
     const {checkedValue} = this.state
     const {dispatch,id} = this.props
 
-    dispatch(handleAnswerQuestion(id,checkedValue))
-    console.log(checkedValue)
     this.setState(() => ({
-      checkedValue: '',
-      toHome: true
+      responseSaving: true,
     }))
+
+    dispatch(handleAnswerQuestion(id,checkedValue))
+
+    setTimeout(() => {
+      this.setState(() => ({
+        checkedValue: '',
+        toHome: true
+      }))
+    },1500)
   }
 
   render() {
 
-    const {checkedValue,toHome} = this.state
+    const {checkedValue,toHome,responseSaving} = this.state
     const {users,pageAvailable,questionAnswered,question,authedUser} = this.props
     const optOneVotes = pageAvailable? question.optionOne.votes.length : 0
     const optTwoVotes = pageAvailable ? question.optionTwo.votes.length : 0
@@ -46,6 +54,15 @@ class Question extends Component {
         <Redirect to='/'/>
       )
     }
+
+    if(responseSaving === true){
+      return (
+        <div style={{position:'fixed',top:'50%', left:'50%'}} >
+          <SyncLoader color='#3B84E1'/>
+        </div>
+      )
+    }
+
 
     if(!(pageAvailable)){
       return (

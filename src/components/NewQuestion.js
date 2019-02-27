@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {handleAddQuestion} from '../actions/questions'
+import { SyncLoader } from 'react-spinners';
 
 class NewQuestion extends Component {
 
   state = {
     option1: '',
     option2:'',
-    toHome: false
+    toHome: false,
+    questionNotSaved: false
   }
 
   handleChangeOption1 = (e)=> {
@@ -30,21 +32,34 @@ class NewQuestion extends Component {
   const {option1,option2} = this.state
   const {dispatch} = this.props
 
-  dispatch(handleAddQuestion(option1,option2))
-
   this.setState(() => ({
     option1: '',
     option2:'',
-    toHome: true
+    questionNotSaved: true
   }))
+
+  dispatch(handleAddQuestion(option1,option2))
+
+  setTimeout(() => {
+    this.setState(() => ({
+      toHome: true,
+    }))
+  },1500)
 }
 
   render() {
 
-    const {option1,option2,toHome} = this.state
+    const {option1,option2,toHome,questionNotSaved} = this.state
 
     if(toHome === true){
       return <Redirect to='/'/>
+    }
+    else if(questionNotSaved === true){
+      return (
+        <div style={{position:'fixed',top:'50%', left:'50%'}} >
+          <SyncLoader color='#3B84E1'/>
+        </div>
+    )
     }
 
     return (
