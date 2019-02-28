@@ -1,15 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import RankCard from './RankCard'
 
-class Leaderboard extends Component {
-
-  render() {
-
-    const {rankings,users} = this.props
-
+const Leaderboard = ({rankings,users}) => {
     return (
-        <div className='center new-tweet'>
+             <div className='center new-tweet'>
           {rankings.map((userId)=>(
             <li key={userId}>
               <RankCard user={users[userId]}/>
@@ -17,9 +12,7 @@ class Leaderboard extends Component {
           ))}
         </div>
     )
-  }
 }
-
 
 function mapStateToProps({users}){
 

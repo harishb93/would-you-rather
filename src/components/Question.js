@@ -22,10 +22,6 @@ class Question extends Component {
     const {checkedValue} = this.state
     const {answerQuestion, id} = this.props
 
-    this.setState(() => ({
-      responseSaving: true
-    }))
-
     //using dispatch via dispatch function mapped prop 'answerQuestion' which will called handleAnswerQuestion thunk action creator
     answerQuestion(id,checkedValue)
 

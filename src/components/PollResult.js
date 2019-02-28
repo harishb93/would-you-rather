@@ -1,8 +1,7 @@
 import React from 'react'
 
-const PollResult = (props) => {
+const PollResult = ({users,question,authedUser}) => {
 
-  const {users,question,authedUser} = props
   const optOneVotes = question.optionOne.votes.length
   const optTwoVotes = question.optionTwo.votes.length
   const totalVotes = optOneVotes + optTwoVotes

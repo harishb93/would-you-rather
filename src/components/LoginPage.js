@@ -42,7 +42,7 @@ class LoginPage extends Component {
         </FormControl>
       </FormGroup>
       <Button
-        disabled= {this.state.userToSignIn ? false : true}
+        disabled= {!this.state.userToSignIn}
         type="submit" bsStyle="info">
         Sign In
       </Button>

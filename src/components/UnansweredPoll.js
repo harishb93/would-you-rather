@@ -2,9 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link , withRouter} from 'react-router-dom'
 
-const UnansweredPoll = (props) => {
+const UnansweredPoll = ({question,user}) => {
   
-    const {question,user} = props
     const {id,optionOne,optionTwo}=question
     const {avatarURL,name}=user
 
